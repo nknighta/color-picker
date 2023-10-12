@@ -1,0 +1,65 @@
+<!-- FILEPATH: /C:/Users/nknig/color-picker.html -->
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Color Picker</title>
+</head>
+
+<body>
+
+    <!-- Reload button -->
+    <button onclick="location.reload()">Reload Page</button>
+
+    <style>
+        body {
+            background-color: #000023; /* Set initial background color */
+            color: #fff;
+        }
+    </style>
+
+    <h1>Dynamic Color Background</h1>
+
+    <!-- Input form -->
+    <form>
+        <label for="color-input">Choose a color:</label>
+        <input type="color" id="color-input" name="color-input">
+    </form>
+
+    <!-- Script tag with input event handler -->
+    <script>
+        const colorInput = document.getElementById('color-input');
+        
+
+        colorInput.addEventListener('input', (event) => {
+            const color = event.target.value;
+            document.body.style.backgroundColor = color;
+        });
+    </script>
+    <!-- Script tag with input event handler and calculation logic -->
+    <script>
+        const input = document.getElementById('input');
+
+        input.addEventListener('input', (event) => {
+            const value = event.target.value;
+            const result = value * 2; // Calculation logic
+            document.getElementById('result').innerHTML = result; // Display result
+        });
+    </script>
+    <h1>Color Picker</h1>
+    <input type="color" id="color-picker">
+    <div id="color-display"></div>
+    <script>
+        const colorPicker = document.getElementById('color-picker');
+        const colorDisplay = document.getElementById('color-display');
+
+        colorPicker.addEventListener('input', (event) => {
+            const color = event.target.value;
+            colorDisplay.style.backgroundColor = color;
+            colorDisplay.innerHTML = color;
+        });
+    </script>
+</body>
+
+</html>
